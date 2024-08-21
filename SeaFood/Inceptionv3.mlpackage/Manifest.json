@@ -1,0 +1,24 @@
+{
+    "fileFormatVersion": "1.0.0",
+    "itemInfoEntries": {
+        "1B390DBB-B19C-4B5B-9A2E-D625E177BFE0": {
+            "author": "com.apple.CoreML",
+            "description": "External FeatureDescription Overlay",
+            "name": "FeatureDescriptions.json",
+            "path": "com.apple.CoreML/FeatureDescriptions.json"
+        },
+        "26166F02-DF51-470A-9B02-A752EBFD29A9": {
+            "author": "com.apple.CoreML",
+            "description": "External Metadata Overlay",
+            "name": "Metadata.json",
+            "path": "com.apple.CoreML/Metadata.json"
+        },
+        "727A0795-442B-4434-A8D3-D575269A0A06": {
+            "author": "com.apple.CoreML",
+            "description": "CoreML Model Specification",
+            "name": "Inceptionv3.mlmodel",
+            "path": "com.apple.CoreML/Inceptionv3.mlmodel"
+        }
+    },
+    "rootModelIdentifier": "727A0795-442B-4434-A8D3-D575269A0A06"
+}
