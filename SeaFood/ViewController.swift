@@ -12,10 +12,12 @@ import Vision
 class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var classificationLabel: UILabel!
     let imagePicker = UIImagePickerController()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        classificationLabel.text = "Classification"
         
         // Set up the image picker to select an image from the photo library
         imagePicker.delegate = self
@@ -55,8 +57,19 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
                 guard let results = request.results as? [VNClassificationObservation] else {
                     fatalError("Model failed to process image")
                 }
-                // Print the classification results
-                print(results)
+                
+                // Get the top classifications and their confidence levels
+                let topClassifications = results.prefix(5).map { classification in
+                    return "\(classification.identifier): \(classification.confidence * 100)%"
+                }.joined(separator: "\n")
+                
+                // Display the classifications on the screen
+                DispatchQueue.main.async {
+                    self.classificationLabel.text = topClassifications
+                }
+                
+                // Print the classification results in the console
+                print(topClassifications)
             }
             
             // Perform the request on the image
